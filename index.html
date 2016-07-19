@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS3 Filter</title>
+<style>
+img{
+	width: 300;
+	height: 200;
+}
+input[type="range"]{
+	width: 200px;
+}
+.speia{
+	-webkit-filter: sepia(1);
+}
+.drop_shadow{
+	-webkit-filter: drop-shadow(5px 5px 0px red);
+	border-radius: 5px;
+}
+
+
+</style>
+</head>
+<body>
+	<h1>CSS3 Filter</h1>
+	<h2>Speia</h2>
+	<img src="messi.jpg" />
+	<img class="speia" src="messi.jpg" />
+	<h2>Grayscale</h2>
+	<div>
+		<input type="range" id="grayscale_range" step="0.01" min="0" max="1" value="0"/><span id="grayscale_value">0</span>
+	</div>
+	<img src="messi.jpg" />
+	<img class="grayscale" src="messi.jpg" />
+
+	<h2>Blur</h2>
+	<div>
+		<input type="range" id="blur_range" step="1" min="0" max="10" value="0"/><span id="blur_value">0</span>px
+	</div>
+	<img src="messi.jpg" />
+	<img class="blur" src="messi.jpg" />
+
+	<h2>Invert</h2>
+	<div>
+		<input type="range" id="invert_range" step="0.01" min="0" max="1" value="0"/><span id="invert_value">0</span>
+	</div>
+	<img src="messi.jpg" />
+	<img class="invert" src="messi.jpg" />
+
+	<h2>Saturate</h2>
+	<div>
+		<input type="range" id="saturate_range" step="1" min="0" max="10" value="1"/><span id="saturate_value">1</span>
+	</div>
+	<img src="messi.jpg" />
+	<img class="saturate" src="messi.jpg" />
+
+	<h2>Contrast</h2>
+	<div>
+		<input type="range" id="contrast_range" step="1" min="0" max="10" value="1"/><span id="contrast_value">1</span>
+	</div>
+	<img src="messi.jpg" />
+	<img class="contrast" src="messi.jpg" />
+
+	<h2>Brightness</h2>
+	<div>
+		<input type="range" id="brightness_range" step="1" min="0" max="10" value="1"/><span id="brightness_value">1</span>
+	</div>
+	<img src="messi.jpg" />
+	<img class="brightness" src="messi.jpg" />
+
+	<h2>Hue Rotate</h2>
+	<div>
+		<input type="range" id="hue_rotate_range" step="1" min="0" max="365" value="0"/><span id="hue_rotate_value">0</span>deg
+	</div>
+	<img src="messi.jpg" />
+	<img class="hue_rotate" src="messi.jpg" />
+
+	<h2>Drop Shadow</h2>
+	<img src="messi.jpg" />
+	<img class="drop_shadow" src="messi.jpg" />
+
+	<h2>Opacity</h2>
+	<div>
+		<input type="range" id="opacity_range" step="0.01" min="0" max="1" value="1"/><span id="opacity_value">1</span>
+	</div>
+	<img src="messi.jpg" />
+	<img class="opacity" src="messi.jpg" />
+
+	<script>
+		document.getElementById("grayscale_range").addEventListener("input", function(event){
+			var value = event.target.value;
+			document.getElementById("grayscale_value").innerText = value;
+			document.getElementsByClassName("grayscale")[0].style.webkitFilter = "grayscale(" + value + ")";
+		});
+
+		document.getElementById("blur_range").addEventListener("input", function(event){
+			var value = event.target.value;
+			document.getElementById("blur_value").innerText = value;
+			document.getElementsByClassName("blur")[0].style.webkitFilter = "blur(" + value + "px)";
+		});
+
+		document.getElementById("invert_range").addEventListener("input", function(event){
+			var value = event.target.value;
+			document.getElementById("invert_value").innerText = value;
+			document.getElementsByClassName("invert")[0].style.webkitFilter = "invert(" + value + ")";
+		});
+
+		document.getElementById("saturate_range").addEventListener("input", function(evet){
+			var value = event.target.value;
+			document.getElementById("saturate_value").innerText = value;
+			document.getElementsByClassName("saturate")[0].style.webkitFilter = "saturate(" + value + ")";
+		});
+
+		document.getElementById("contrast_range").addEventListener("input", function(evet){
+			var value = event.target.value;
+			document.getElementById("contrast_value").innerText = value;
+			document.getElementsByClassName("contrast")[0].style.webkitFilter = "contrast(" + value + ")";
+		});
+
+		document.getElementById("brightness_range").addEventListener("input", function(evet){
+			var value = event.target.value;
+			document.getElementById("brightness_value").innerText = value;
+			document.getElementsByClassName("brightness")[0].style.webkitFilter = "brightness(" + value + ")";
+		});
+
+		document.getElementById("hue_rotate_range").addEventListener("input", function(evet){
+			var value = event.target.value;
+			document.getElementById("hue_rotate_value").innerText = value;
+			document.getElementsByClassName("hue_rotate")[0].style.webkitFilter = "hue-rotate(" + value + "deg)";
+		});
+
+		document.getElementById("opacity_range").addEventListener("input", function(event){
+			var value = event.target.value;
+			document.getElementById("opacity_value").innerText = value;
+			document.getElementsByClassName("opacity")[0].style.webkitFilter = "opacity(" + value + ")";
+		});
+
+	</script>
+</body>
+</html>
